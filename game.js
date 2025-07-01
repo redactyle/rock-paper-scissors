@@ -47,6 +47,17 @@ function playRound() {
     }
 }
 
-playRound();
-console.log(humanScore);
-console.log(computerScore);
+function playGame() {
+    console.log("Welcome to Rock-Paper-Scissors.")
+    for (let i = 0; i < 5; i++) {
+        playRound();
+    }
+
+    console.log("Final Score: ");
+    console.log(`You: ${humanScore}, Computer: ${computerScore}`);
+    humanScore > computerScore ? console.log(`Congratulations, you beat the computer by ${humanScore - computerScore} points.`) : 
+    computerScore > humanScore ? console.log(`Too bad, the computer beat you by ${computerScore - humanScore} points.`) :
+                                 console.log("Not bad, you tied with the computer.");
+}
+
+playGame();
